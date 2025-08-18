@@ -6,20 +6,6 @@
   <title>Stanley Rawlinson — A Fictional Historical Persona</title>
   <meta name="description" content="A single‑page website for the fictional historical persona Stanley Rawlinson (1789–1854): surveyor, cartographer, and amateur astronomer of Surrey, England." />
 
-  <!-- Structured data: clearly marked as a fictional profile -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Stanley Rawlinson",
-    "description": "Fictional historical persona: surveyor, cartographer, and amateur astronomer active in Surrey, England (1789–1854).",
-    "birthDate": "1789",
-    "deathDate": "1854",
-    "disambiguatingDescription": "This profile is a work of historical fiction for creative/educational use.",
-    "address": {"@type":"PostalAddress", "addressRegion":"Surrey", "addressCountry":"England"}
-  }
-  </script>
-
   <style>
     :root{
       --bg: #0b0d10;
@@ -32,181 +18,55 @@
       --radius: 18px;
       --shadow: 0 10px 30px rgba(0,0,0,.25);
     }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7f8fb; --panel:#ffffff; --text:#111318; --muted:#54606d; --brand:#0b6bcb; --accent:#8a5a00; }
-    }
-    *{ box-sizing: border-box }
-    html,body{ height:100% }
     body{
-      margin:0; font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color:var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(124,194,255,.18), transparent), var(--bg);
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      margin:0; font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text); background: var(--bg);
     }
-    a{ color:var(--brand); text-decoration: none }
-    a:hover{ text-decoration: underline }
     .container{ max-width: var(--maxw); margin: 0 auto; padding: 24px }
-    .panel{ background: var(--panel); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow) }
-
-    /* Header */
-    header.hero{ position: relative; overflow: hidden; padding: 64px 24px 40px }
-    .hero .wrap{ max-width: var(--maxw); margin: 0 auto; display: grid; gap: 24px; align-items: center }
-    .badge{ display:inline-flex; gap:8px; align-items:center; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); font-size:12px }
-    .title{ font-size: clamp(32px, 6vw, 56px); line-height:1.1; margin: 8px 0 10px }
+    header.hero{ text-align:center; padding:40px 24px }
+    header.hero img{ max-width:220px; border-radius:12px; box-shadow:var(--shadow); margin-bottom:18px }
+    .title{ font-size: clamp(32px, 6vw, 56px); margin:8px 0 10px }
     .subtitle{ font-size: clamp(16px, 2.4vw, 22px); color: var(--muted) }
-
-    /* Controls */
-    .controls{ display:flex; gap:10px; margin-top:18px }
-    .btn{ appearance:none; border:1px solid rgba(255,255,255,.14); background:transparent; color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; backdrop-filter:saturate(120%) blur(6px) }
-    .btn:hover{ border-color: rgba(255,255,255,.3) }
-
-    /* Layout sections */
-    section{ margin: 24px 0 }
-    .grid{ display:grid; gap:18px }
-    @media (min-width: 860px){ .grid.cols-3{ grid-template-columns: repeat(3, 1fr) } }
-
-    /* Cards */
-    .card{ padding:18px; border-radius:16px; border:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) }
-    .card h3{ margin: 0 0 6px; font-size: 18px }
-    .meta{ color:var(--muted); font-size: 14px }
-
-    /* Timeline */
-    .timeline{ position:relative; padding-left:20px }
-    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--brand), transparent) }
-    .event{ position:relative; margin: 14px 0; padding-left:14px }
-    .event::marker{ content:"" }
-    .event::before{ content:""; position:absolute; left:-2px; top:7px; width:10px; height:10px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 3px rgba(124,194,255,.18) }
-
-    /* Quote */
-    blockquote{ margin:0; padding:18px 20px; border-left:3px solid var(--brand); background: rgba(124,194,255,.08); border-radius: 0 12px 12px 0 }
-    cite{ display:block; color:var(--muted); margin-top:8px; font-style: normal }
-
-    footer{ color:var(--muted); font-size:14px; padding: 24px; text-align:center }
-    .disclaimer{ font-size: 13px; color: var(--muted) }
-
-    /* Simple “crest” using SVG */
-    .crest{ width:72px; height:72px; background: radial-gradient(circle at 30% 30%, #fff3, #0000), var(--panel); border:1px solid rgba(255,255,255,.14); border-radius:50%; display:grid; place-items:center; box-shadow: var(--shadow) }
-    .crest svg{ opacity:.9 }
+    .panel{ background: var(--panel); border-radius: var(--radius); padding:20px; margin:24px 0 }
+    .timeline{ padding-left:20px; position:relative }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:var(--brand) }
+    .event{ margin:14px 0; padding-left:14px; position:relative }
+    .event::before{ content:""; position:absolute; left:-2px; top:7px; width:10px; height:10px; border-radius:50%; background:var(--brand) }
+    footer{ text-align:center; padding:20px; font-size:14px; color:var(--muted) }
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="wrap">
-      <div class="grid" style="grid-template-columns:auto 1fr; align-items:center; gap:16px">
-        <div class="crest" aria-hidden="true">
-          <!-- A simple compass rose icon (inline SVG) -->
-          <svg viewBox="0 0 24 24" width="36" height="36" role="img" aria-label="Compass">
-            <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-4.5 14L15 15l3-7.5L9 9l-1.5 9Z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="badge">Fictional Historical Profile</div>
-          <h1 class="title">Stanley Rawlinson <span style="font-weight:400; color:var(--muted)">(1789–1854)</span></h1>
-          <p class="subtitle">Surveyor, cartographer, and amateur astronomer of the Surrey Hills. Remembered for meticulous parish maps, measured mile stones, and star‑charts drawn by lantern‑light.</p>
-          <div class="controls">
-            <button class="btn" id="printBtn" title="Print or save as PDF">Print / Save</button>
-            <button class="btn" id="toggleSources">Toggle Sources</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img src="stanley.jpg" alt="Portrait of fictional persona Stanley Rawlinson" />
+    <h1 class="title">Stanley Rawlinson <span style="font-weight:400; color:var(--muted)">(1789–1854)</span></h1>
+    <p class="subtitle">Surveyor, cartographer, and amateur astronomer of the Surrey Hills.</p>
   </header>
 
   <main class="container">
-    <!-- Overview cards -->
-    <section class="grid cols-3">
-      <article class="card">
-        <h3>Born</h3>
-        <div class="meta">Michaelmas, 1789 — Dorking parish, Surrey</div>
-        <p>Apprenticed to a local surveyor at thirteen; learned trigonometry from dog‑eared notebooks and the night sky.</p>
-      </article>
-      <article class="card">
-        <h3>Notable Work</h3>
-        <div class="meta">1814–1837</div>
-        <p><em>Chart of the Mole Valley</em>; a set of parish boundary maps; a proposed standard for mile‑stone spacing along coaching roads.</p>
-      </article>
-      <article class="card">
-        <h3>Interests</h3>
-        <div class="meta">Astronomy · Geodesy · Local lore</div>
-        <p>Operated a backyard observatory with a handmade 3‑inch refractor; kept almanacs noting comets, frosts, and floods.</p>
-      </article>
+    <section class="panel">
+      <h2>About Stanley</h2>
+      <p>Stanley Rawlinson is a <strong>fictional</strong> figure created for creative and educational projects. His story blends practical surveying with quiet stargazing. He represents the many anonymous craftspeople whose careful measurements underpinned railways, canals, and parish life.</p>
     </section>
 
-    <!-- About -->
-    <section class="panel" style="padding:20px">
-      <h2 style="margin-top:0">About Stanley</h2>
-      <p>Stanley Rawlinson is a <strong>fictional</strong> figure created for creative and educational projects. Set against the early 19th‑century English countryside, his story blends practical surveying with quiet stargazing. He represents the many anonymous craftspeople whose careful measurements underpinned railways, canals, and parish life.</p>
-      <blockquote>
-        “A yard unmeasured is a tale untold; the land keeps truth as the heavens keep time.”
-        <cite>— attributed to Rawlinson, notebook fragment (fictional)</cite>
-      </blockquote>
-    </section>
-
-    <!-- Timeline -->
-    <section class="panel" style="padding:20px">
-      <h2 style="margin-top:0">Timeline (Fictional)</h2>
+    <section class="panel">
+      <h2>Timeline (Fictional)</h2>
       <ol class="timeline">
         <li class="event"><strong>1789</strong> · Born near Dorking; mother a lace‑maker, father a wheelwright.</li>
         <li class="event"><strong>1802</strong> · Apprenticed to Mrs. Harbury, surveyor; first triangulation from Box Hill to Ranmore.</li>
-        <li class="event"><strong>1814</strong> · Completes <em>Chart of the Mole Valley</em>; praised for its legibility and consistent mile marks.</li>
-        <li class="event"><strong>1821</strong> · Builds a modest observatory; begins nightly star logs of Orion and the Pleiades.</li>
-        <li class="event"><strong>1830</strong> · Publishes pamphlet on boundary stones; advocates public posting of parish surveys.</li>
-        <li class="event"><strong>1837</strong> · Commissioned to advise on a proposed coaching road realignment; retires soon after due to ill‑health.</li>
-        <li class="event"><strong>1854</strong> · Passes away at home; notebooks bequeathed to a village school (all fictional).</li>
+        <li class="event"><strong>1814</strong> · Completes <em>Chart of the Mole Valley</em>.</li>
+        <li class="event"><strong>1821</strong> · Builds a modest observatory; begins nightly star logs.</li>
+        <li class="event"><strong>1830</strong> · Publishes pamphlet on boundary stones.</li>
+        <li class="event"><strong>1854</strong> · Passes away at home (fictional).</li>
       </ol>
-    </section>
-
-    <!-- Works & Artifacts -->
-    <section class="grid cols-3">
-      <article class="card">
-        <h3>Chart of the Mole Valley</h3>
-        <p>Large‑format manuscript map with neat hachures and hand‑tinted waterways. Notes on flood‑meadows and toll‑gates in the margin.</p>
-      </article>
-      <article class="card">
-        <h3>Lantern Almanac</h3>
-        <p>Pocket notebook logging frost depths, planting days, and comet sightings; includes a simple equation of time table.</p>
-      </article>
-      <article class="card">
-        <h3>Boundary Stones Pamphlet</h3>
-        <p>Argues for durable marks at parish edges and standardized inscriptions to reduce disputes.</p>
-      </article>
-    </section>
-
-    <!-- Sources (fabricated for the persona) -->
-    <section id="sources" class="panel" style="padding:20px; display:none">
-      <h2 style="margin-top:0">Imagined Sources & Citations</h2>
-      <p class="disclaimer">These entries are intentionally fabricated to support the fictional persona.</p>
-      <ul>
-        <li><em>Proceedings of the Surrey Surveyors’ Circle</em> (1829): “On the proper spacing of milestones.”</li>
-        <li><em>Journal of Rural Astronomers</em> (1832): “Notes from a lantern observatory on the Mole.”</li>
-        <li>Parish Notice (Dorking, 1830): “Boundary stones newly set by S. Rawlinson.”</li>
-      </ul>
-    </section>
-
-    <!-- Contact / Usage -->
-    <section class="panel" style="padding:20px">
-      <h2 style="margin-top:0">Use This Persona</h2>
-      <p>Free to use in tabletop campaigns, classroom exercises, ARGs, or creative writing. Please retain the <strong>fictional</strong> label to avoid confusion with real history.</p>
-      <ul>
-        <li>Short name: <code>stanleyrawlinson</code></li>
-        <li>Era: Early 19th‑century England</li>
-        <li>Domains: Surveying, mapping, folk‑astronomy</li>
-      </ul>
-      <p>Questions? <a href="mailto:curator@example.com" rel="nofollow">Contact the curator</a>.</p>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Fictional Profile of Stanley Rawlinson. <span class="disclaimer">This is a work of historical fiction.</span></p>
+    <p>© <span id="year"></span> Fictional Profile of Stanley Rawlinson. <em>This is a work of historical fiction.</em></p>
   </footer>
 
   <script>
-    // Small UX helpers
-    const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();
-    document.getElementById('printBtn')?.addEventListener('click', () => window.print());
-    document.getElementById('toggleSources')?.addEventListener('click', () => {
-      const s = document.getElementById('sources');
-      if(!s) return; s.style.display = (s.style.display === 'none' || !s.style.display) ? 'block' : 'none';
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
