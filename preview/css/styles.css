@@ -33,6 +33,21 @@ body {
 a { color: var(--link-color); }
 a:hover { color: var(--accent); }
 
+/* ---- Hamburger button (hidden on desktop) ------------ */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--header-text);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: auto;
+}
+
 /* ---- Header ------------------------------------------ */
 
 header {
@@ -435,16 +450,36 @@ footer {
 /* ---- Responsive -------------------------------------- */
 
 @media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .top-nav {
+    display: none;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
   .page-wrapper {
     flex-direction: column;
   }
 
+  /* Sidebar hidden by default on mobile; shown as dropdown when toggled */
   .sidebar {
+    display: none;
     width: 100%;
     position: static;
     max-height: none;
     border-right: none;
     border-bottom: 2px solid var(--border-color);
+    z-index: 100;
+  }
+
+  .sidebar.sidebar-open {
+    display: block;
   }
 
   .content {
@@ -460,11 +495,6 @@ footer {
 
   .chapter-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .chapter-header h1 {
