@@ -240,7 +240,7 @@ li { margin-bottom: 0.3rem; }
 
 .img-left {
   float: left;
-  margin: 0.5rem 1.5rem 1rem 0;
+  margin: 0.5rem 1.5rem 0 0;
   max-width: 210px;
 }
 
@@ -258,6 +258,7 @@ li { margin-bottom: 0.3rem; }
   color: var(--text-muted);
   text-align: center;
   margin-top: 0.3rem;
+  margin-bottom: 0;
 }
 
 .img-center {
@@ -312,6 +313,11 @@ blockquote {
   padding: 1rem 1.5rem;
   font-style: italic;
   clear: both;
+}
+
+blockquote.no-clear {
+  clear: none;
+  overflow: auto;
 }
 
 blockquote p { margin-bottom: 0.5rem; }
