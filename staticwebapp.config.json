@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+
+  "platform": {
+    "apiRuntime": "node:18"
+  },
+
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN"
+  },
+
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,jpeg,gif,svg}", "/css/*", "/js/*"]
+  },
+
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
+}

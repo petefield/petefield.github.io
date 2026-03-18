@@ -33,6 +33,27 @@ jobs:
           output_location: "." # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
+          # ---------------------------------------------------------------------------
+          # Application settings (Azure environment variables / config values)
+          #
+          # These are set as Application Settings on the deployed Static Web App.
+          # They are available to Azure Functions API routes as process.env.<KEY>.
+          #
+          # HOW TO ADD A NEW SETTING
+          # ─────────────────────────
+          # Non-sensitive value  → put it directly here, e.g.  MY_SETTING=my-value
+          # Sensitive value      → store it as a GitHub repository secret first
+          #                        (repo → Settings → Secrets and variables → Actions)
+          #                        then reference it as  MY_SECRET=${{ secrets.MY_SECRET }}
+          #
+          # EXAMPLES (uncomment and replace with real names/values):
+          # app_settings: |
+          #   COSMOS_DB_CONNECTION_STRING=${{ secrets.COSMOS_DB_CONNECTION_STRING }}
+          #   STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }}
+          #   APP_ENV=production
+          #   FEATURE_FLAG_NEW_UI=true
+          # ---------------------------------------------------------------------------
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
